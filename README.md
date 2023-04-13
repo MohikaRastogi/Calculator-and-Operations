@@ -12,7 +12,8 @@ The program also defines several helper methods like squareOfExpression, factori
 
 Overall, the program provides a simple and extensible calculator implementation.
 
-##### Usage
+#### Usage
+Prerequisites to run this project are, you should have jdk installed and sbt too. Set up an environment to run this project, you can also run this from intellij but make sure to have sbt running and download required plugings. Read more about how to run the project and set up environment and a step by step guide, follow on the link provided at the end.
 
 To use this project, you will first need to clone the repository to your local machine. You can do this by following these steps:
 
@@ -20,7 +21,7 @@ To use this project, you will first need to clone the repository to your local m
    2.  Type git clone https://github.com/username/repo.git (replace "username" and "repo" with the appropriate information for the repository you want to clone) and press enter.
    3. Once the repository has been cloned, navigate to the project directory by typing cd repo (replace "repo" with the appropriate name for the repository you cloned) and pressing enter.
 
-####### Once you have cloned the repository and navigated to the project directory, you can run the project using the following steps:
+##### Once you have cloned the repository and navigated to the project directory, you can run the project using the following steps:
 
     1. Install any required dependencies by typing npm install or yarn install (depending on which package manager you are using) and pressing enter.
    2. Run the project by typing npm start or yarn start and pressing enter.
@@ -28,7 +29,19 @@ To use this project, you will first need to clone the repository to your local m
 
 ##### Running the project
 
-To run the project, viewers can follow the steps provided above under the "Usage" section. Alternatively, you can provide a link to a deployed version of the project (if available) that viewers can access directly from their web browser. If you are hosting the project on a platform like Heroku, you can include a link to the hosted version in the README file or in the project description on the platform.
+To run the project, 
+   -  Open a terminal and navigate to the root directory of your project.
+
+   -  Run the command sbt. This will start the sbt console.
+
+   -  Type run in the sbt console to run your Scala project.
+
+   -   Type test in the sbt console to run your Scala tests.
+
+   -  After making changes to your code, use the compile command to compile the changes.
+
+   -  Use the exit command to exit the sbt console.
+
 
 ###### [Learn more about scala and setting up sbt here](https://blog.knoldus.com/simple-build-tool-getting-with-sbt-setting-up-running/)
 
