@@ -59,7 +59,8 @@ object DriverMain extends App {
   // Perform some additional calculations
   private val squareOfExpressionResult = Calculator.squareOfExpression(2, 2)
   private val findResult = Calculator.find(Seq(1.0, 2.0, 3.0, 4.0))
-  private val resultChainingOperations = Calculator.findAverageAfterChainingOperations(Seq(1, 2, 3))
+  private val resultChainingOperations = Calculator.findAverageAfterChainingOperations(Seq(1, 2, 3, 4))
+  resultChainingOperations.foreach(result => println(f"Average After Chaining Operations Result: $result%.2f"))
 
   // Wait for findResult and resultChainingOperations to complete
   Await.result(findResult, Duration(50, SECONDS))
@@ -68,5 +69,4 @@ object DriverMain extends App {
   // Print results
   println("Square of Expression Result: " + squareOfExpressionResult)
   println("Find Result: " + findResult)
-  println("Average After Chaining Operations Result: " + resultChainingOperations.value.get.get)
 }

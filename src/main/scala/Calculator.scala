@@ -64,26 +64,28 @@ object Calculator {
       factorial(number - 1, accumulator * number)
   }
 
-  //method to find the Average of numbers
-  //first we find the fibonacci of each number of input sequence then find the odd numbers from
-  // that result then add those numbers find the average of them
+  //  method to find the Average of numbers
+  //  first we find the fibonacci of each number of input sequence then find the odd numbers from
+  //   that result then add those numbers find the average of them
   def findAverageAfterChainingOperations(numbers: Seq[Double]): Future[Double] = {
     Future {
       @tailrec
       def NthFibonacci(number: Double, previousNumber: Double, currentNumber: Double): Double = {
-        if (number <= 2)
-          currentNumber
+        if (number == 0)
+          previousNumber
         else
           NthFibonacci(number - 1, currentNumber, currentNumber + previousNumber)
       }
 
-      val getOddFibonacciNumbers = numbers.filter { number =>
-        val result = NthFibonacci(number.toInt, 0, 1)
-        result % 2 != 0
-      }
+      val getFibonacciNumbers = numbers.map(number =>
+        NthFibonacci(number.toInt, 0, 1)
+      )
+      val getOddFibonacciNumbers = getFibonacciNumbers.filter(_ % 2 != 0)
+
       getOddFibonacciNumbers.foldLeft(0.0)((firstValue: Double, secondValue: Double) => firstValue + secondValue) / getOddFibonacciNumbers.length
     }
   }
+
 
 }
 
@@ -122,7 +124,7 @@ object Division extends Operator {
       else {
         throw new ArithmeticException("Cannot divide By zero ")
       }
-      case _ => throw  CalculatorException("Cannot divide due to some error")
+      case _ => throw CalculatorException("Cannot divide due to some error")
     }
   }
 }
